@@ -8,7 +8,7 @@ pluginManagement {
         properties.getProperty('flutter.sdk')
     }()
 
-    def flutterSdkPath = System.getenv("FLUTTER_SDK") ?: flutterSdkPath.call()
+    flutterSdkPath = System.getenv("FLUTTER_SDK") ?: flutterSdkPath
     settings.ext.flutterSdkPath = flutterSdkPath
 
     includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
