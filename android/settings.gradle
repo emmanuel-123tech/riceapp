@@ -12,6 +12,12 @@ pluginManagement {
     settings.ext.flutterSdkPath = flutterSdkPath
 
     includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+    
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
 }
 
 plugins {
@@ -39,15 +45,3 @@ if (flutterSdkPath == null) {
         "or use FLUTTER_SDK environment variable."
     )
 }
-
-def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
-
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-}
-
-includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
